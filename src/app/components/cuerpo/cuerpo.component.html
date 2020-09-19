@@ -1,0 +1,37 @@
+<div class="table100 mb-4">
+    
+    <div class="table100 mb-4">
+      <div>
+        <div class="row">
+          <div class="col">
+            <input #ncomensal (keyup.enter)="agregar(ncomensal.value,ccomensal.value)" type="text" class="form-control" placeholder="Nombre del restaurante" autofocus>
+          </div>
+          <div class="col">
+            <input  #ccomensal  (keyup.enter)="agregar(ncomensal.value,ccomensal.value)"  type="text" class="form-control" placeholder="Ciudad" autofocus>
+           
+          </div>
+          <div class="col">
+           <button (click)="agregar(ncomensal.value,ccomensal.value)" class="btn btn-info" type="submit">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table100">
+      <table>
+     
+        <thead>
+          <tr class="table100-head">
+            <th class="column1">Restaurante</th>
+            <th class="column2">Ciudad</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let namec of comensales, let ciudadc of comensales ">
+          <!-- tiene q ser comensales ya que estoy almacenando mi objeto -->
+            <tr >
+              <td class="column1">{{namec.nombre}}</td>
+              <td class="column2">{{ciudadc.ciudad}}</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
